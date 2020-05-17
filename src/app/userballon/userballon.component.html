@@ -1,0 +1,11 @@
+<div [@abrirFechar]="isOpen ? 'open' : 'closed'" class="ballon">
+  <span class="close-text" (click)="closeModal()">X</span>
+  <div class="ballon-row">
+    <img class="user-image-in-ballon" [src]="userParam?.image" alt="" />
+    <span class="text-white user-name">{{ userParam?.name }}</span>
+  </div>
+
+  <a style="text-decoration: none;">
+    <p class="user-link">Ver perfil do github</p>
+  </a>
+</div>
