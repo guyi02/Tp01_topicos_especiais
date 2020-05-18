@@ -1,11 +1,15 @@
-<div style="background-color: #2c374f; height: 92vh;">
+<div *ngIf="this.bitcoin" style="background-color: #2c374f; height: 92vh;">
   <div class="container">
-    <div class="update-btn">
+    <div class="update-btn" (click)="this.getListValues()">
       <i class="fas fa-rocket"></i>
     </div>
     <div class="row">
       <div class="col-12 my-4">
         <h1 class="text-center text-white my-3">Cotação atual do bitcoin</h1>
+        <p class="text-center text-white">
+          Ultima atualização:
+          {{ bitcoin.time.updated | date: "dd/MM/yyyy HH:mm:ss" }}
+        </p>
       </div>
       <div
         class="col-6 d-flex flex-column justify-content-center align-items-center"
@@ -17,7 +21,10 @@
             alt=""
           />
         </div>
-        <span class="btc-text">$ 54,552.00</span>
+        <span class="btc-text"
+          >{{ bitcoin.bpi.USD.code == "USD" && "$" }}
+          {{ bitcoin.bpi.USD.rate }}</span
+        >
       </div>
       <div
         class="col-6 d-flex flex-column justify-content-center align-items-center"
@@ -29,7 +36,10 @@
             alt=""
           />
         </div>
-        <span class="btc-text">R$ 54.552,00</span>
+        <span class="btc-text"
+          >{{ bitcoin.bpi.BRL.code == "BRL" && "R$" }}
+          {{ bitcoin.bpi.BRL.rate }}</span
+        >
       </div>
     </div>
   </div>
