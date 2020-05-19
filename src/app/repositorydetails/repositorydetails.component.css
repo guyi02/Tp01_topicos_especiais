@@ -1,1 +1,15 @@
+.scroll {
+  overflow-y: scroll;
+  height: 85vh;
+}
 
+.card-user-back-btn {
+  position: absolute;
+  left: 10px;
+  top: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  cursor: pointer;
+}

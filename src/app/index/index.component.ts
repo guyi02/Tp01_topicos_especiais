@@ -13,14 +13,14 @@ const UserArray = [
     linkGit: 'guyi02',
   },
   {
-    name: 'Guilherme2',
-    image: 'https://avatars0.githubusercontent.com/u/13474328?v=4',
-    linkGit: 'guyi02',
+    name: 'Gabi',
+    image: 'https://avatars3.githubusercontent.com/u/38729864?v=4',
+    linkGit: 'gabriellicorrea',
   },
   {
-    name: 'Guilherme3',
-    image: 'https://avatars0.githubusercontent.com/u/13474328?v=4',
-    linkGit: 'guyi02',
+    name: 'Lara',
+    image: 'https://avatars2.githubusercontent.com/u/48126123?v=4',
+    linkGit: 'laraflau',
   },
 ];
 

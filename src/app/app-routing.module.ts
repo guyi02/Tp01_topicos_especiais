@@ -6,7 +6,7 @@ import { BitcoinComponent } from './bitcoin/bitcoin.component';
 
 const routes: Routes = [
   { path: '', component: IndexComponent },
-  { path: 'repo', component: RepositorydetailsComponent },
+  { path: 'repository/:user', component: RepositorydetailsComponent },
   { path: 'bitcoin', component: BitcoinComponent },
 ];
 

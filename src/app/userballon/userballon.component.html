@@ -1,11 +1,18 @@
-<div [@abrirFechar]="isOpen ? 'open' : 'closed'" class="ballon">
+<div
+  [@abrirFechar]="isOpen ? 'open' : 'closed'"
+  class="ballon"
+  *ngIf="this.userParam"
+>
   <span class="close-text" (click)="closeModal()">X</span>
   <div class="ballon-row">
-    <img class="user-image-in-ballon" [src]="userParam?.image" alt="" />
+    <img class="user-image-in-ballon" [src]="userParam.image" alt="" />
     <span class="text-white user-name">{{ userParam?.name }}</span>
   </div>
 
-  <a style="text-decoration: none;">
+  <a
+    style="text-decoration: none;"
+    [routerLink]="['/repository', userParam.linkGit]"
+  >
     <p class="user-link">Ver perfil do github</p>
   </a>
 </div>
