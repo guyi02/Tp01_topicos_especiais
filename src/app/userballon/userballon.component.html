@@ -5,7 +5,11 @@
 >
   <span class="close-text" (click)="closeModal()">X</span>
   <div class="ballon-row">
-    <img class="user-image-in-ballon" [src]="userParam.image" alt="" />
+    <img
+      class="user-image-in-ballon"
+      [src]="userParam.image"
+      alt="Imagem do usuário"
+    />
     <span class="text-white user-name">{{ userParam?.name }}</span>
   </div>
 
