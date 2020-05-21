@@ -2,6 +2,28 @@
   <div class="container-fluid h-100">
     <div class="row">
       <div class="col-4">
+        <div class="row-users">
+          <div *ngFor="let user of usersInView">
+            <img
+              src="{{ user.image }}"
+              width="80"
+              height="80"
+              alt=""
+              (click)="setActive(user)"
+            />
+            <div *ngIf="this.userActive == user.linkGit">
+              <div class="rocket-active">
+                <img
+                  src="../../assets/images/rocket.png"
+                  height="40"
+                  width="40"
+                  alt=""
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
         <div class="card card-user rounded p-3">
           <div class="card-user-back-btn" [routerLink]="['/']">
             <i class="fas fa-arrow-left"></i>
@@ -9,14 +31,15 @@
           <h4 class="text-center mb-3">
             {{ this.gitUserInfo.name || this.gitUserInfo.login }}
           </h4>
-          <img
+          <!-- <img
             width="120"
             height="120"
             class="rounded-circle align-self-center"
             [src]="this.gitUserInfo.avatar_url"
             alt=""
-          />
+          /> -->
           <span>Bio</span>
+          <hr />
           <p>
             {{ this.gitUserInfo.bio }}
           </p>
@@ -29,7 +52,6 @@
             <tr>
               <th scope="col">NOME</th>
               <th scope="col">URL</th>
-              <th scope="col">DESCRIÇÃO</th>
               <th scope="col">DATA DE CRIAÇÃO</th>
               <th scope="col">LINGUAGEM</th>
             </tr>
@@ -38,13 +60,13 @@
               <td>{{ repo.name }}</td>
               <td>
                 <a
-                  href="{{ repo.owner.url }}"
+                  href="{{ repo.clone_url }}"
                   target="_blank"
                   class="link-repo-url"
-                  >{{ repo.owner.url }}</a
+                  >{{ repo.clone_url }}</a
                 >
               </td>
-              <td>{{ repo.description }}</td>
+
               <td>{{ repo.created_at }}</td>
               <td>{{ repo.language }}</td>
             </tr>

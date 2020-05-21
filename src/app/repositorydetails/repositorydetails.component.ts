@@ -3,6 +3,24 @@ import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute } from '@angular/router';
 import { forkJoin } from 'rxjs';
 
+const UserArray = [
+  {
+    name: 'Guilherme',
+    image: 'https://avatars0.githubusercontent.com/u/13474328?v=4',
+    linkGit: 'guyi02',
+  },
+  {
+    name: 'Gabi',
+    image: 'https://avatars3.githubusercontent.com/u/38729864?v=4',
+    linkGit: 'gabriellicorrea',
+  },
+  {
+    name: 'Lara',
+    image: 'https://avatars2.githubusercontent.com/u/48126123?v=4',
+    linkGit: 'laraflau',
+  },
+];
+
 interface GitResponseUser {
   name: string;
   login: string;
@@ -13,10 +31,10 @@ interface GitResponseUser {
 
 interface GitResponseRepos {
   name: string;
+  clone_ur: string;
   owner: {
     url: string;
   };
-  description: string;
   created_at: Date;
   language: string;
 }
@@ -30,12 +48,15 @@ export class RepositorydetailsComponent implements OnInit {
   baseUrl = 'https://api.github.com/users';
   gitUserInfo: GitResponseUser = null;
   gitRepos: GitResponseRepos = null;
+  userActive = null;
 
+  usersInView = UserArray;
   constructor(private route: ActivatedRoute, private http: HttpClient) {}
 
   ngOnInit(): void {
     this.route.paramMap.subscribe((params) => {
       this.update(params.get('user'));
+      this.userActive = params.get('user');
     });
   }
 
@@ -48,7 +69,14 @@ export class RepositorydetailsComponent implements OnInit {
       // res[0] é as informações do usuário
       // res[1] é as informações do reposotório
       this.gitUserInfo = res[0];
+
       this.gitRepos = res[1];
+      console.log(this.gitRepos);
     });
+  }
+
+  setActive(userinfo) {
+    this.userActive = userinfo.linkGit;
+    this.update(userinfo.linkGit);
   }
 }
