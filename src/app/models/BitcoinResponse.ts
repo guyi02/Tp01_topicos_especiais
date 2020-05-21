@@ -3,13 +3,10 @@ export interface BitcoinResponse {
     updated: string;
   };
   bpi: {
-    USD: {
+    [key in "USD" | "BRL"]: {
       code: string;
       rate: string;
-    };
-    BRL: {
-      code: string;
-      rate: string;
-    };
+      rate_float: number;
+    };   
   };
 }
