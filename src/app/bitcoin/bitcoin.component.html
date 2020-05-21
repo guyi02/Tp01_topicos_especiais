@@ -21,9 +21,8 @@
             alt=""
           />
         </div>
-        <span class="btc-text"
-          >{{ bitcoin.bpi.USD.code == "USD" && "$" }}
-          {{ bitcoin.bpi.USD.rate }}</span
+        <span class="btc-text">
+          {{ bitcoin.bpi.USD.rate_float | currency: "USD":'symbol-narrow'}}</span
         >
       </div>
       <div
@@ -36,9 +35,8 @@
             alt=""
           />
         </div>
-        <span class="btc-text"
-          >{{ bitcoin.bpi.BRL.code == "BRL" && "R$" }}
-          {{ bitcoin.bpi.BRL.rate }}</span
+        <span class="btc-text">
+          {{ bitcoin.bpi.BRL.rate_float | currency:"BRL"}}</span
         >
       </div>
     </div>

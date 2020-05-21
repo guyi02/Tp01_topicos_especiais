@@ -1,5 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, LOCALE_ID} from '@angular/core';
+import { registerLocaleData } from '@angular/common';
+import localePt from '@angular/common/locales/pt';
+registerLocaleData(localePt, 'pt')
 
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
@@ -28,7 +31,9 @@ import { BitcoinService } from './bitcoin.service';
     BrowserAnimationsModule,
     HttpClientModule,
   ],
-  providers: [GithubService, BitcoinService],
+  providers: [GithubService, BitcoinService, 
+    {provide: LOCALE_ID, useValue: 'pt'}
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
