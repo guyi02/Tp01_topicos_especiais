@@ -3,33 +3,6 @@
   height: 85vh;
 }
 
-.card-user {
-  margin-top: 50px;
-}
-.row-users {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-around;
-  margin: 20px 0;
-}
-
-.user-rounded {
-  width: 90px;
-  height: 90px;
-  border-radius: 40px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.rocket-active {
-  margin-top: 20px;
-  margin-left: 20px;
-  height: 40px;
-  width: 40px;
-}
-
 .card-user-back-btn {
   position: absolute;
   left: 10px;
@@ -39,4 +12,34 @@
   align-items: center;
   font-size: 30px;
   cursor: pointer;
+  color: #fff;
+}
+
+.card-user {
+  margin-top: 80px;
+}
+.row-users {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  margin: 50px 0;
+}
+
+.user-rounded-image {
+  width: 90px;
+  height: 90px;
+  border-radius: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.rocket-active {
+  position: absolute;
+  margin-left: 25px;
+  top: 100px;
+  height: 40px;
+  width: 40px;
 }

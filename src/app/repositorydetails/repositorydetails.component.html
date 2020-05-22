@@ -2,9 +2,13 @@
   <div class="container-fluid h-100">
     <div class="row">
       <div class="col-4">
+        <div class="card-user-back-btn" [routerLink]="['/']">
+          <i class="fas fa-arrow-left"></i>
+        </div>
         <div class="row-users">
-          <div *ngFor="let user of usersInView">
+          <div *ngFor="let user of usersInView" style="position: relative;">
             <img
+              class="user-rounded-image"
               src="{{ user.image }}"
               width="80"
               height="80"
@@ -25,9 +29,6 @@
         </div>
 
         <div class="card card-user rounded p-3">
-          <div class="card-user-back-btn" [routerLink]="['/']">
-            <i class="fas fa-arrow-left"></i>
-          </div>
           <h4 class="text-center mb-3">
             {{ this.gitUserInfo.name || this.gitUserInfo.login }}
           </h4>
