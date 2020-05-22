@@ -11,7 +11,7 @@
               alt=""
               (click)="setActive(user)"
             />
-            <div *ngIf="this.userActive == user.linkGit">
+            <div *ngIf="this.userActive == user.gitUser">
               <div class="rocket-active">
                 <img
                   src="../../assets/images/rocket.png"
@@ -31,13 +31,6 @@
           <h4 class="text-center mb-3">
             {{ this.gitUserInfo.name || this.gitUserInfo.login }}
           </h4>
-          <!-- <img
-            width="120"
-            height="120"
-            class="rounded-circle align-self-center"
-            [src]="this.gitUserInfo.avatar_url"
-            alt=""
-          /> -->
           <span>Bio</span>
           <hr />
           <p>

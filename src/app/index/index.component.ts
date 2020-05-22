@@ -3,24 +3,24 @@ import { Component, OnInit } from '@angular/core';
 interface User {
   name: string;
   image: string;
-  linkGit: string;
+  gitUser: string;
 }
 
 const UserArray = [
   {
     name: 'Guilherme',
     image: 'https://avatars0.githubusercontent.com/u/13474328?v=4',
-    linkGit: 'guyi02',
+    gitUser: 'guyi02',
   },
   {
     name: 'Gabi',
     image: 'https://avatars3.githubusercontent.com/u/38729864?v=4',
-    linkGit: 'gabriellicorrea',
+    gitUser: 'gabriellicorrea',
   },
   {
     name: 'Lara',
     image: 'https://avatars2.githubusercontent.com/u/48126123?v=4',
-    linkGit: 'laraflau',
+    gitUser: 'laraflau',
   },
 ];
 

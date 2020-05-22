@@ -7,17 +7,17 @@ const UserArray = [
   {
     name: 'Guilherme',
     image: 'https://avatars0.githubusercontent.com/u/13474328?v=4',
-    linkGit: 'guyi02',
+    gitUser: 'guyi02',
   },
   {
     name: 'Gabi',
     image: 'https://avatars3.githubusercontent.com/u/38729864?v=4',
-    linkGit: 'gabriellicorrea',
+    gitUser: 'gabriellicorrea',
   },
   {
     name: 'Lara',
     image: 'https://avatars2.githubusercontent.com/u/48126123?v=4',
-    linkGit: 'laraflau',
+    gitUser: 'laraflau',
   },
 ];
 
@@ -71,12 +71,11 @@ export class RepositorydetailsComponent implements OnInit {
       this.gitUserInfo = res[0];
 
       this.gitRepos = res[1];
-      console.log(this.gitRepos);
     });
   }
 
   setActive(userinfo) {
-    this.userActive = userinfo.linkGit;
-    this.update(userinfo.linkGit);
+    this.userActive = userinfo.gitUser;
+    this.update(userinfo.gitUser);
   }
 }
